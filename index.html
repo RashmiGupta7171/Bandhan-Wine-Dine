@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bandhan Billing System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Bandhan Restaurant</h1>
+        <p>Simple Billing System</p>
+    </div>
+
+    <div class="content">
+
+        <!-- Menu Section -->
+        <div class="menu">
+            <h2>Menu</h2>
+
+            <button onclick="addItem('Veg Biryani', 180)">Veg Biryani - ₹180</button>
+            <button onclick="addItem('Paneer Butter Masala', 250)">Paneer Butter Masala - ₹250</button>
+            <button onclick="addItem('Butter Naan', 50)">Butter Naan - ₹50</button>
+            <button onclick="addItem('Dal Tadka', 160)">Dal Tadka - ₹160</button>
+            <button onclick="addItem('Cold Drink', 40)">Cold Drink - ₹40</button>
+             <button onclick="addItem('Veg MOMO', 100)">Veg MOMO - ₹100</button>
+             <button onclick="addItem('Chicken MOMO', 150)">Chicken MOMO - ₹150</button>
+              <button onclick="addItem('Veg Chowmein', 100)">Veg Chowmein - ₹100</button>
+               <button onclick="addItem('Chicken Chowmein', 150)">Chicken Chowmein - ₹150</button>
+                <button onclick="addItem('Chicken LOLIPOP', 200)">Chicken LOLIPOP- ₹200</button>
+                 <button onclick="addItem('Sekuwa', 200)"> Sekuwa- ₹200</button>
+                  <button onclick="addItem('Cold Coffee', 100)"> Cold Coffee- ₹100</button>
+        </div>
+
+        <!-- Bill Section -->
+        <div class="bill">
+            <h2>Bill</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="bill-items">
+                    <!-- Items added dynamically -->
+                </tbody>
+            </table>
+
+            <div class="total">
+                Total: ₹<span id="total">0</span>
+            </div>
+
+            <button class="clear-btn" onclick="clearBill()">Cancel Bill</button>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
