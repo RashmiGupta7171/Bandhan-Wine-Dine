@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Bandhan Billing System</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.css">
 </head>
 <body>
 
@@ -11,8 +11,8 @@
 
     <!-- Header -->
     <div class="header">
-        <h1>Bandhan Restaurant</h1>
-        <p>Simple Billing System</p>
+        <h1>Bandhan Wine & Dine</h1>
+        <p>Billing System</p>
     </div>
 
     <div class="content">
@@ -21,18 +21,29 @@
         <div class="menu">
             <h2>Menu</h2>
 
-            <button onclick="addItem('Veg Biryani', 180)">Veg Biryani - ₹180</button>
-            <button onclick="addItem('Paneer Butter Masala', 250)">Paneer Butter Masala - ₹250</button>
-            <button onclick="addItem('Butter Naan', 50)">Butter Naan - ₹50</button>
-            <button onclick="addItem('Dal Tadka', 160)">Dal Tadka - ₹160</button>
-            <button onclick="addItem('Cold Drink', 40)">Cold Drink - ₹40</button>
-             <button onclick="addItem('Veg MOMO', 100)">Veg MOMO - ₹100</button>
-             <button onclick="addItem('Chicken MOMO', 150)">Chicken MOMO - ₹150</button>
-              <button onclick="addItem('Veg Chowmein', 100)">Veg Chowmein - ₹100</button>
-               <button onclick="addItem('Chicken Chowmein', 150)">Chicken Chowmein - ₹150</button>
-                <button onclick="addItem('Chicken LOLIPOP', 200)">Chicken LOLIPOP- ₹200</button>
-                 <button onclick="addItem('Sekuwa', 200)"> Sekuwa- ₹200</button>
-                  <button onclick="addItem('Cold Coffee', 100)"> Cold Coffee- ₹100</button>
+            <!-- Each item has Half & Full buttons -->
+            <div class="menu-item">
+                <span>Veg Biryani</span>
+                <button onclick="addItem('Veg Biryani', 'Half', 120)">Half ₹120</button>
+                <button onclick="addItem('Veg Biryani', 'Full', 180)">Full ₹180</button>
+            </div>
+
+            <div class="menu-item">
+                <span>Paneer Butter Masala</span>
+                <button onclick="addItem('Paneer Butter Masala', 'Half', 170)">Half ₹170</button>
+                <button onclick="addItem('Paneer Butter Masala', 'Full', 250)">Full ₹250</button>
+            </div>
+
+            <div class="menu-item">
+                <span>Chicken MOMO</span>
+                <button onclick="addItem('Chicken MOMO', 'Half', 90)">Half ₹90</button>
+                <button onclick="addItem('Chicken MOMO', 'Full', 150)">Full ₹150</button>
+            </div>
+
+            <div class="menu-item">
+                <span>Cold Coffee</span>
+                <button onclick="addItem('Cold Coffee', 'Full', 100)">₹100</button>
+            </div>
         </div>
 
         <!-- Bill Section -->
@@ -43,13 +54,12 @@
                 <thead>
                     <tr>
                         <th>Item</th>
+                        <th>Type</th>
                         <th>Price</th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody id="bill-items">
-                    <!-- Items added dynamically -->
-                </tbody>
+                <tbody id="bill-items"></tbody>
             </table>
 
             <div class="total">
@@ -57,6 +67,7 @@
             </div>
 
             <button class="clear-btn" onclick="clearBill()">Cancel Bill</button>
+            <button class="print-btn" onclick="printBill()">Print Bill</button>
         </div>
 
     </div>
