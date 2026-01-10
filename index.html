@@ -1,89 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Bandhan Billing System</title>
-    <link rel="stylesheet" href="script.css">
+  <meta charset="UTF-8">
+  <title>Restaurant Billing System</title>
+  <link rel="stylesheet" href="script.css">
 </head>
 <body>
 
+<h1>Restaurant Billing System</h1>
+
 <div class="container">
 
-    <!-- Header -->
-    <div class="header">
-        <h1>Bandhan Wine & Dine</h1>
-        <p>Billing System</p>
+  <div class="menu">
+    <h2>Menu</h2>
+    <input type="search" id="search" placeholder="Search item...">
+    <div id="menuList"></div>
+  </div>
+
+  <div class="billing">
+    <h2>Billing</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="billBody"></tbody>
+    </table>
+
+    <div class="total">
+      Grand Total: ₹<span id="grandTotal">0</span>
     </div>
 
-    <div class="content">
-
-        <!-- Menu Section -->
-        <div class="menu">
-            <h2>Menu</h2>
-
-            <!-- Each item has Half & Full buttons -->
-            <div class="menu-item">
-                <span>Veg Biryani</span>
-                <button onclick="addItem('Veg Biryani', 'Half', 120)">Half ₹120</button>
-                <button onclick="addItem('Veg Biryani', 'Full', 180)">Full ₹180</button>
-            </div>
-                        <div class="menu-item">
-                <span>Chicken Biryani</span>
-                <button onclick="addItem('Chicken Biryani', 'Half', 180)">Half ₹180</button>
-                <button onclick="addItem('Chicken Biryani', 'Full', 250)">Full ₹250</button>
-            </div>
-
-
-            <div class="menu-item">
-                <span>Paneer Butter Masala</span>
-                <button onclick="addItem('Paneer Butter Masala', 'Half', 170)">Half ₹170</button>
-                <button onclick="addItem('Paneer Butter Masala', 'Full', 250)">Full ₹250</button>
-            </div>
-            
-            <div class="menu-item">
-                <span>Chicken Butter Masala</span>
-                <button onclick="addItem('Chicken Butter Masala', 'Half', 200)">Half ₹200</button>
-                <button onclick="addItem('Chicken Butter Masala', 'Full', 250)">Full ₹250</button>
-            </div>
-
-            <div class="menu-item">
-                <span>Chicken MOMO</span>
-                <button onclick="addItem('Chicken MOMO', 'Half', 90)">Half ₹90</button>
-                <button onclick="addItem('Chicken MOMO', 'Full', 150)">Full ₹150</button>
-            </div>
-
-            <div class="menu-item">
-                <span>Cold Coffee</span>
-                <button onclick="addItem('Cold Coffee', 'Full', 100)">₹100</button>
-            </div>
-        </div>
-
-        <!-- Bill Section -->
-        <div class="bill">
-            <h2>Bill</h2>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Type</th>
-                        <th>Price</th>
-                        <th>Action</th>
-                         
-                    </tr>
-                </thead>
-                <tbody id="bill-items"></tbody>
-            </table>
-
-            <div class="total">
-                Total: ₹<span id="total">0</span>
-            </div>
-
-            <button class="clear-btn" onclick="clearBill()">Cancel Bill</button>
-            <button class="print-btn" onclick="printBill()">Print Bill</button>
-        </div>
-
+    <div class="actions">
+      <button onclick="cancelBill()">Cancel Bill</button>
+      <button onclick="printBill()">Print Bill</button>
     </div>
+  </div>
 
 </div>
 
