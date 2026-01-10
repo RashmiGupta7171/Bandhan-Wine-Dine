@@ -2,7 +2,7 @@ const menuData = {
   Starters: [
     { name: "Paneer Tikka", price: 180 },
     { name: "Hara Bhara Kabab", price: 200 },
-    { name: "veg Chrispy Indo Chienese", price: 250 },
+    { name: "Veg Chrispy Indo Chienese", price: 250 },
     { name: "Corn Cheese Ball", price: 150 },
     { name: "Potato Chilly", price: 180 },
     { name: "Paneer Chilly", price: 200 },
