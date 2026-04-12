@@ -1,48 +1,99 @@
-body {
+ body {
   font-family: Arial, sans-serif;
   background: #f5f5f5;
   padding: 20px;
 }
-h1{
-    text-align: center;
-}
- h2 {
-  margin: bottom 10px;
+
+h1 {
+  text-align: center;
 }
 
+h2 {
+  margin-bottom: 10px;
+}
+
+/* LAYOUT */
 .container {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 20px;
 }
 
-.menu, .billing {
+/* CARDS */
+.menu,
+.billing {
   background: white;
   padding: 15px;
-  border-radius: 6px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+/* CATEGORY */
 .menu-category {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.menu-item {
+/* TITLE ROW (Veg Varieties + Half Full) */
+.menu-title-row {
   display: flex;
   justify-content: space-between;
-  padding: 5px 0;
+  align-items: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  margin-bottom: 8px;
 }
 
+/* HALF FULL HEADER */
+.title-prices {
+  display: flex;
+  gap: 50px;
+  font-weight: bold;
+  min-width: 120px;
+  justify-content: center;
+}
+
+/* MENU ROW */
+.menu-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px dotted #ccc;
+}
+
+/* TEXT ALIGN */
+.col-item {
+  text-align: left;
+}
+
+.col-half,
+.col-full {
+  text-align: center;
+}
+
+/* BUTTONS (MENU) */
+.menu-row button {
+  padding: 4px 10px;
+  border: none;
+  background: #2e7d32;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.menu-row button:hover {
+  background: #1b5e20;
+}
+
+/* SEARCH */
 input[type="search"] {
   width: 100%;
   padding: 6px;
   margin-bottom: 10px;
 }
 
-button {
-  padding: 6px 10px;
-  cursor: pointer;
-}
-
+/* TABLE */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -59,6 +110,13 @@ th {
   background: #f0f0f0;
 }
 
+/* BILL BUTTONS */
+td button {
+  padding: 4px 8px;
+  margin: 0 2px;
+}
+
+/* TOTAL */
 .total {
   margin-top: 10px;
   font-size: 18px;
@@ -66,23 +124,13 @@ th {
   font-weight: bold;
 }
 
+/* ACTION BUTTONS */
 .actions {
   margin-top: 15px;
   display: flex;
   justify-content: space-between;
-  
 }
 
-
-@media print {
-  .menu, button, input {
-    display: none;
-    background-color: #2e7d32;
-  }
-  body {
-    background: white;
-  }
-}
 .actions button:first-child {
   background-color: #e53935;
   color: #fff;
@@ -98,11 +146,16 @@ th {
 .actions button:hover {
   opacity: 0.9;
 }
-select {
-  margin: 0 5px;
-}
 
-td button {
-  padding: 4px 8px;
-}
+/* PRINT */
+@media print {
+  .menu,
+  button,
+  input {
+    display: none;
+  }
 
+  body {
+    background: white;
+  }
+}
