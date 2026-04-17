@@ -163,39 +163,6 @@ function renderMenu(filter = "") {
 
 
 // ================= ADD ITEM =================
-// function addItem(name, price, type) {
-//   if (!price) return;
-
-//   const key = name + "-" + type;
-
-//   let row = [...billBody.rows].find(r => r.dataset.key === key);
-
-//   if (!row) {
-//     row = document.createElement("tr");
-//     row.dataset.key = key;
-//     row.dataset.price = price;
-//     row.dataset.count = "1";
-
-//     row.innerHTML = `
-//       <td>${name} (${type})</td>
-//       <td>
-//         <button onclick="changeQty(this,-1)">-</button>
-//         <span class="count">1</span>
-//         <button onclick="changeQty(this,1)">+</button>
-//       </td>
-//       <td>${price}</td>
-//       <td class="item-total">${price}</td>
-//       <td><button onclick="removeItem(this)">X</button></td>
-//     `;
-
-//     billBody.appendChild(row);
-//   } else {
-//     row.dataset.count = Number(row.dataset.count) + 1;
-//     row.querySelector(".count").textContent = row.dataset.count;
-//   }
-
-//   updateTotal(row);
-// }
 function addItem(name, price, type) {
   if (!price) return;
 
